@@ -1,7 +1,5 @@
-- name: Configuring DB Server
+- name: Configuring db server
   hosts: db
   become: yes
-  vars_prompt:  # This has to stay at PLAY level only, inside TASK level did not work.
-  - name: mysql_root_password
-    prompt: Enter MySql Password of your choice
-    private: no
+  roles:
+  - db    
